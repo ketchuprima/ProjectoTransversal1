@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <form method="post" name="factura" id="factura">
+    <form action="prueba.php" method="post" name="factura" id="factura">
         <div>
             <label for="nombre" class="label">Nombre</label>
             <input name="nombre" type="text" id="nombre">
