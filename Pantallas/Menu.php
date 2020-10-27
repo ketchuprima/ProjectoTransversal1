@@ -12,15 +12,11 @@
 <body>
     <div class="container">
         <div class="row">
-            <!-- Elementos generados a partir del JSON -->
             <main id="items"></main>
-            <!-- Carrito -->
             <aside>
                 <h2>Carrito</h2>
-                <!-- Elementos del carrito -->
                 <ul id="carrito" class="list-group"></ul>
                 <hr>
-                <!-- Precio total -->
                 <p >Total: <span id="total"></span>&euro;</p>
                 <button id="boton-vaciar" >Vaciar</button>
                 <button id="boton-pedir" >Siguiente</button>
