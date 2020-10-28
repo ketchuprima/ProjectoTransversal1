@@ -18,7 +18,7 @@
         </div>
         <div>
             <label for="correo" class="label">Correo electrónico</label>
-            <input name="correo" type="text" id="correo">
+            <input name="correo" type="text" id="correo" onkeyup="validarEmail()">
             <span id="errorcorreo"></span>
         </div>
         <div>
