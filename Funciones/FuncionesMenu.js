@@ -70,7 +70,7 @@ window.onload = function () {
     }
 
     function anyadirCarrito () {
-        carrito.push(this.getAttribute('marcador'))
+        carrito.push(this.getAttribute('marcador'));
         renderizarCarrito();
     }
 
@@ -99,6 +99,10 @@ window.onload = function () {
 
     function borrarItemCarrito() {
         this.parentNode.parentNode.removeChild(this.parentNode);
+        for(let i=0; i<carrito.length; i++){
+            alert(carrito[i]+" , "+this.getAttribute('marcador'))
+            if(carrito[i]==this.getAttribute('marcador')) delete carrito[i];
+        }
         calcularTotal(-this.parentNode.id);
     }
 
@@ -127,8 +131,9 @@ window.onload = function () {
     }
 
     function Enviar(){
-        alert(carrito[0])
-
+        localStorage.setItem('pedido', carrito);
+        localStorage.setItem('precio', total);
+        window.location.href="../Pantallas/FinalizarCompra.php";
     }
 
     botonVaciarItem.addEventListener('click', vaciarCarrito);

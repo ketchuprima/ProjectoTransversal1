@@ -9,7 +9,6 @@
     <script src="..\Funciones\FuncionesMenu.js"></script>
 </head>
 <body>
-<body>
     <div class="container">
         <div class="row">
             <main id="items"></main>
@@ -19,10 +18,9 @@
                 <hr>
                 <p >Total: <span id="total"></span>&euro;</p>
                 <button id="boton-vaciar" >Vaciar</button>
-                <button id="boton-pedir" >Siguiente</button>
+                <input type="button" id="boton-pedir"  value="Siguiente">
             </aside>
         </div>
     </div>
-</body>
 </body>
 </html>

@@ -1,6 +1,8 @@
 let vacio = true;
 let numCorrecto = true;
 let correoCorrecto = true;
+var pedido = localStorage.getItem('pedido');
+alert(pedido[0])
 
 function camposVacios(){
     vacio = true;
