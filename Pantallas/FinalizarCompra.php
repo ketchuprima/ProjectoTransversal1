@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <div id="pedidoFinal">
+        <ul id="listaFinal"></ul>
+    </div>
     <form action="prueba.php" method="post" name="factura" id="factura">
         <div>
             <label for="nombre" class="label">Nombre</label>
@@ -22,6 +25,7 @@
             <span id="errorcorreo"></span>
         </div>
         <div>
+            <input type="button" name="retroceder" id="retroceder" value="Retroceder" onclick="atras()">
             <input type="submit" name="enviar" id="enviar" value="Enviar" onclick="validar()">
         </div>
 
