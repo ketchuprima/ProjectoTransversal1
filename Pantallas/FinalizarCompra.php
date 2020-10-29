@@ -8,7 +8,7 @@
     <div id="pedidoFinal">
         <ul id="listaFinal"></ul>
     </div>
-    <form action="Prueba.php" method="post" name="factura" id="factura">
+    <form action="confirmar.php" method="post" name="factura" id="factura">
         <div>
             <label for="nombre" class="label">Nombre</label>
             <input name="nombre" type="text" id="nombre">
@@ -24,6 +24,7 @@
             <input name="correo" type="text" id="correo" onkeyup="validarEmail()">
             <span id="errorcorreo"></span>
         </div>
+        <input name="pedido" id="pedido" type="text" style="visibility: hidden">
         <div>
             <input type="button" onclick="atras()" name="retroceder" id="retroceder" value="Retroceder">
             <input type="submit" name="enviar" id="enviar" value="Enviar" onclick="validar()">
