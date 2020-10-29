@@ -114,9 +114,7 @@ function validar(){
     }
 }
 
-//retroceder.addEventListener('onclick', atras());
-
 function atras(){
-    window.location.href="../Pantallas/FinalizarCompra.php";
+    window.location.href="../Pantallas/Menu.php";
 }
 

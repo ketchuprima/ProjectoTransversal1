@@ -28,7 +28,7 @@
             <input type="submit" name="enviar" id="enviar" value="Enviar" onclick="validar()">
         </div>
     </form>
-    <button id="retroceder">Retroceder</button>
+    <button id="retroceder" onclick="atras()">Retroceder</button>
     <script src="../Funciones/CompFormularioCompra.js"></script>
 </body>
 </html>
