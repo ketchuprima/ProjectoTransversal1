@@ -5,7 +5,6 @@ let correoCorrecto = true;
 let pedido = localStorage.getItem("pedido");
 let precio = localStorage.getItem("precio");
 let bocadillos;
-
 let baseDeDatos = [
     {
         id: 1,
@@ -30,8 +29,33 @@ let baseDeDatos = [
         nombre: 'Bocadillo de atún',
         precio: 10.20,
         imagen: 'https://sevilla.abc.es/gurme/wp-content/uploads/sites/24/2013/01/bocadillo-atun-morron.jpg'
+    },
+    {
+        id: 5,
+        nombre: 'Tortilla de patatas',
+        precio: 1.50,
+        imagen: 'https://www.velocidadcuchara.com/wp-content/uploads/2014/02/tortilla-espanola-con-patatas-de-bolsa.jpg'
+    },
+    {
+        id: 6,
+        nombre: 'Paella',
+        precio: 1.70,
+        imagen: 'https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/elgranchef/R/Receta-de-paella-1.jpg'
+    },
+    {
+        id: 7,
+        nombre: 'Lentejas',
+        precio: 2.40,
+        imagen: 'https://www.recetasderechupete.com/wp-content/uploads/2019/09/Lentejas-con-chorizo-foto.jpg'
+    },
+    {
+        id: 8,
+        nombre: 'Macarrones',
+        precio: 10.20,
+        imagen: 'https://cdn6.recetasdeescandalo.com/wp-content/uploads/2020/05/Macarrones-con-tomate-casero.-Receta-muy-sabrosa-y-sencilla-1.jpg'
     }
 ]
+
 
 //Ejecución de las funciones iniciales
 recibirPedido();
