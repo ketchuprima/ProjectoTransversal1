@@ -87,6 +87,7 @@ window.onload = function () {
 
         let botonBorrar = document.createElement('button');
         botonBorrar.textContent="-";
+        botonBorrar.setAttribute("marcador", baseDeDatos[parseInt(carrito[carrito.length-1])-1]['id']);
         botonBorrar.addEventListener('click', borrarItemCarrito);
         
         alimentoTexto.appendChild(botonBorrar);
@@ -98,10 +99,13 @@ window.onload = function () {
     }
 
     function borrarItemCarrito() {
+        let check = false;
         this.parentNode.parentNode.removeChild(this.parentNode);
-        for(let i=0; i<carrito.length; i++){
-            alert(carrito[i]+" , "+this.getAttribute('marcador'))
-            if(carrito[i]==this.getAttribute('marcador')) delete carrito[i];
+        for(let i=0; i<carrito.length && check==false; i++){
+            if(carrito[i]==this.getAttribute('marcador')) {
+                delete carrito[i];
+                check=true;
+            }
         }
         calcularTotal(-this.parentNode.id);
     }
