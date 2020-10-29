@@ -25,10 +25,10 @@
             <span id="errorcorreo"></span>
         </div>
         <div>
+            <input type="button" onclick="atras()" name="retroceder" id="retroceder" value="Retroceder">
             <input type="submit" name="enviar" id="enviar" value="Enviar" onclick="validar()">
         </div>
     </form>
-    <button id="retroceder" onclick="atras()">Retroceder</button>
     <script src="../Funciones/CompFormularioCompra.js"></script>
 </body>
 </html>

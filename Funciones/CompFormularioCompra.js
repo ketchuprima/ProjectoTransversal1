@@ -1,10 +1,10 @@
+//Variables
 let vacio = true;
 let numCorrecto = true;
 let correoCorrecto = true;
 let pedido = localStorage.getItem("pedido");
 let precio = localStorage.getItem("precio");
 let bocadillos;
-let retroceder = document.getElementById("retroceder");
 
 let baseDeDatos = [
     {
@@ -33,8 +33,10 @@ let baseDeDatos = [
     }
 ]
 
+//Ejecución de las funciones iniciales
 recibirPedido();
 
+//Esta función nos carga la lista de los pedidos que ha hecho el usuario en la pantalla anterior
 function recibirPedido(){
     for(let i=0; i<pedido.length; i++){
         if(pedido[i] != ","){
@@ -52,26 +54,30 @@ function recibirPedido(){
     bocadillos += precio;
 }
 
+//Esta función valida que los campos del formulario no estén vacios
 function camposVacios(){
     vacio = true;
     let inputs = document.getElementsByTagName("input");
     let elemento;
     for(let i=0; i<inputs.length; i++){
         if(inputs[i].getAttribute("id") != "enviar"){
-            elemento = inputs[i].getAttribute("id");
-            if(inputs[i].value.length == 0){
-                document.getElementById("error" + elemento).innerHTML="El campo está vacío";
-                document.getElementById(elemento).style.backgroundColor="red";
-                document.getElementById("error" + elemento).style.display="block";
-                vacio = false;
-            }else{
-                document.getElementById("error" + elemento).style.display="none";
-                document.getElementById(elemento).style.backgroundColor="";
+            if(inputs[i].getAttribute("id") != "retroceder"){
+                elemento = inputs[i].getAttribute("id");
+                if(inputs[i].value.length == 0){
+                    document.getElementById("error" + elemento).innerHTML="El campo está vacío";
+                    document.getElementById(elemento).style.backgroundColor="red";
+                    document.getElementById("error" + elemento).style.display="block";
+                    vacio = false;
+                }else{
+                    document.getElementById("error" + elemento).style.display="none";
+                    document.getElementById(elemento).style.backgroundColor="";
+                }
             }
         }
     }
 }
 
+//Esta función comprueba que el formato del número de teléfono introducido sea correcto de forma dinámica
 function numeroCorrecto(){
     let formatoNumero = /^[0-9]{9,9}$/;
     if(!formatoNumero.test(document.getElementById("telefono").value)){
@@ -86,6 +92,7 @@ function numeroCorrecto(){
     }
 }
 
+//Esta función comprueba que el formato del correo electrónico introducido sea correcto de forma dinámica
 function validarEmail(){
     let emailRegex = /^\w+([\.-]?\w+)*@(inspedralbes)(\.cat)$/;
     if(!emailRegex.test(document.getElementById("correo").value)){
@@ -100,7 +107,8 @@ function validarEmail(){
     }
 }
 
-
+//Esta función valida que todos los campos ni estén vacios ni sean incorrectos sus datos una vez damos el botón de enviar para que el formulario sea correcto y pasamos los datos
+//de la lista de los pedidos del usuario para después poder escribirlos en el fichero
 function validar(){
     camposVacios();
     numeroCorrecto();
@@ -114,6 +122,7 @@ function validar(){
     }
 }
 
+//Esta función nos permite retroceder a la pantalla anterior
 function atras(){
     window.location.href="../Pantallas/Menu.php";
 }
