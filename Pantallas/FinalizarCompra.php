@@ -8,7 +8,7 @@
     <div id="pedidoFinal">
         <ul id="listaFinal"></ul>
     </div>
-    <form action="prueba.php" method="post" name="factura" id="factura">
+    <form action="Prueba.php" method="post" name="factura" id="factura">
         <div>
             <label for="nombre" class="label">Nombre</label>
             <input name="nombre" type="text" id="nombre">
@@ -25,11 +25,10 @@
             <span id="errorcorreo"></span>
         </div>
         <div>
-            <input type="button" name="retroceder" id="retroceder" value="Retroceder" onclick="atras()">
             <input type="submit" name="enviar" id="enviar" value="Enviar" onclick="validar()">
         </div>
-
     </form>
+    <button id="retroceder">Retroceder</button>
     <script src="../Funciones/CompFormularioCompra.js"></script>
 </body>
 </html>

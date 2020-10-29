@@ -4,6 +4,7 @@ let correoCorrecto = true;
 let pedido = localStorage.getItem("pedido");
 let precio = localStorage.getItem("precio");
 let bocadillos;
+let retroceder = document.getElementById("retroceder");
 
 let baseDeDatos = [
     {
@@ -36,7 +37,6 @@ recibirPedido();
 
 function recibirPedido(){
     for(let i=0; i<pedido.length; i++){
-        console.log(pedido[i]);
         if(pedido[i] != ","){
             let nombres = document.createElement("li");
             nombres.setAttribute("class", "lista-nombres");
@@ -114,7 +114,9 @@ function validar(){
     }
 }
 
+//retroceder.addEventListener('onclick', atras());
+
 function atras(){
-    window.location.href="../Pantallas/Menu.php";
+    window.location.href="../Pantallas/FinalizarCompra.php";
 }
 
