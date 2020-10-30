@@ -165,7 +165,6 @@ window.onload = function () {
     function Enviar(){
         localStorage.setItem('pedido', carrito);
         localStorage.setItem('precio', total);
-        localStorage.setItem('baseDeDatos', baseDeDatos);
         window.location.href="../Pantallas/FinalizarCompra.php";
     }
 
