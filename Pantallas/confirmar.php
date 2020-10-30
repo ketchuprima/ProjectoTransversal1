@@ -11,7 +11,7 @@
         $fp = fopen('comanda.txt', 'w');
         fclose($fp);
     }
-
+    echo $_POST['pedido'];
     $fp = fopen('comanda.txt', 'a');
     fwrite($fp, "               PEDIDO              \n");
     fwrite($fp, "------------------------------------\n");

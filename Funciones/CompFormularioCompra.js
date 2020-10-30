@@ -68,7 +68,7 @@ function recibirPedido(){
             nombres.setAttribute("class", "lista-nombres");
             nombres.textContent = baseDeDatos[pedido[i]-1]["nombre"];
             document.getElementById("listaFinal").appendChild(nombres);
-            bocadillos += baseDeDatos[pedido[i]-1]["nombre"] + "\n";
+            bocadillos += baseDeDatos[pedido[i]-1]["nombre"] + '\n';
         }
     }
     let precioTotal = document.createElement("li");
@@ -76,6 +76,7 @@ function recibirPedido(){
     precioTotal.textContent = precio;
     document.getElementById("listaFinal").appendChild(precioTotal);
     bocadillos += precio;
+    document.getElementById('pedido').value=bocadillos;
 }
 
 //Esta función valida que los campos del formulario no estén vacios
@@ -135,7 +136,6 @@ function validarEmail(){
 //de la lista de los pedidos del usuario para después poder escribirlos en el fichero
 function validar(){
     alert(bocadillos);
-    document.getElementById('pedido').value=bocadillos;
     camposVacios();
     numeroCorrecto();
     validarEmail();
