@@ -11,7 +11,9 @@
         $fp = fopen('comanda.txt', 'w');
         fclose($fp);
     }
-    echo $_POST['pedido'];
+
+    $sustituto = str_replace(',', "\n", $_POST['pedido']);
+
     $fp = fopen('comanda.txt', 'a');
     fwrite($fp, "               PEDIDO              \n");
     fwrite($fp, "------------------------------------\n");
@@ -21,7 +23,7 @@
     fwrite($fp, "\n");
     fwrite($fp, $_POST['correo']);
     fwrite($fp, "\n");
-    fwrite($fp, $_POST['pedido']);
+    fwrite($fp, $sustituto . "€");
     fwrite($fp, "\n\n\n");
     fclose($fp);
     ?>

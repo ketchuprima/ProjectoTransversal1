@@ -4,7 +4,7 @@ let numCorrecto = true;
 let correoCorrecto = true;
 let pedido = localStorage.getItem("pedido");
 let precio = localStorage.getItem("precio");
-let bocadillos;
+let bocadillos =[];
 let baseDeDatos = [
     {
         id: 1,
@@ -68,14 +68,14 @@ function recibirPedido(){
             nombres.setAttribute("class", "lista-nombres");
             nombres.textContent = baseDeDatos[pedido[i]-1]["nombre"];
             document.getElementById("listaFinal").appendChild(nombres);
-            bocadillos += baseDeDatos[pedido[i]-1]["nombre"] + '\n';
+            bocadillos.push(baseDeDatos[pedido[i]-1]["nombre"]);
         }
     }
     let precioTotal = document.createElement("li");
     precioTotal.setAttribute("class", "precioTotal");
     precioTotal.textContent = precio;
     document.getElementById("listaFinal").appendChild(precioTotal);
-    bocadillos += precio;
+    bocadillos.push(precio);
     document.getElementById('pedido').value=bocadillos;
 }
 
@@ -87,15 +87,17 @@ function camposVacios(){
     for(let i=0; i<inputs.length; i++){
         if(inputs[i].getAttribute("id") != "enviar"){
             if(inputs[i].getAttribute("id") != "retroceder"){
-                elemento = inputs[i].getAttribute("id");
-                if(inputs[i].value.length == 0){
-                    document.getElementById("error" + elemento).innerHTML="El campo está vacío";
-                    document.getElementById(elemento).style.backgroundColor="red";
-                    document.getElementById("error" + elemento).style.display="block";
-                    vacio = false;
-                }else{
-                    document.getElementById("error" + elemento).style.display="none";
-                    document.getElementById(elemento).style.backgroundColor="";
+                if(inputs[i].getAttribute("id") != "pedido"){
+                    elemento = inputs[i].getAttribute("id");
+                    if(inputs[i].value.length == 0){
+                        document.getElementById("error" + elemento).innerHTML="El campo está vacío";
+                        document.getElementById(elemento).style.backgroundColor="red";
+                        document.getElementById("error" + elemento).style.display="block";
+                        vacio = false;
+                    }else{
+                        document.getElementById("error" + elemento).style.display="none";
+                        document.getElementById(elemento).style.backgroundColor="";
+                    }
                 }
             }
         }

@@ -182,3 +182,66 @@ undefinedBocadillo de hamburguesa con quesoBocadillo de atún12.6
 undefinedBocadillo de nocillaBocadillo de hamburguesa con queso3.9
 
 
+               PEDIDO              
+------------------------------------
+
+
+
+Bocadillo de nocilla,Bocadillo de nocilla,Bocadillo de atún,13.2
+
+
+               PEDIDO              
+------------------------------------
+
+
+
+Bocadillo de nocilla,Bocadillo de nocilla,Bocadillo de atún,13.2
+
+
+               PEDIDO              
+------------------------------------
+
+
+
+Bocadillo de nocilla,Bocadillo de nocilla,Bocadillo de atún,13.2
+
+
+               PEDIDO              
+------------------------------------
+
+
+
+Bocadillo de atún\n,Bocadillo de atún\n,20.4
+
+
+               PEDIDO              
+------------------------------------
+
+
+
+Bocadillo de nocilla\n\nBocadillo de atún\n\nBocadillo de atún\n\n21.9
+
+
+               PEDIDO              
+------------------------------------
+
+
+
+Bocadillo de fues
+Bocadillo de fues
+Bocadillo de fues
+5.1
+
+
+               PEDIDO              
+------------------------------------
+
+
+
+Bocadillo de fues
+Bocadillo de fues
+Bocadillo de fues
+Bocadillo de fues
+6.8€
+
+
