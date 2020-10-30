@@ -65,7 +65,7 @@ window.onload = function () {
         var hoy = new Date();
         let momentoMenu=0;
         let limite=4
-        if(hoy.getHours()>=11&&hoy.getMinutes()>30){ momentoMenu=4; limite=8 }
+        if((hoy.getHours()>=11&&hoy.getMinutes()>30)||hoy.getHours()>11){ momentoMenu=4; limite=8 }
             for (i=momentoMenu; i<limite;i++) {
             //Div general
             let miNodo = document.createElement('div');

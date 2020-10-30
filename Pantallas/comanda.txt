@@ -1,0 +1,32 @@
+               PEDIDO              
+------------------------------------
+Joel
+687952388
+asdf@inspedralbes.cat
+Bocadillo de fues
+Bocadillo de atún
+Bocadillo de atún
+22.099999999999998€
+
+
+               PEDIDO              
+------------------------------------
+elyuel
+123456789
+sjkdfhfgvasdzhjk@inspedralbes.cat
+Paella
+Lentejas
+Macarrones
+14.299999999999999€
+
+
+               PEDIDO              
+------------------------------------
+dsfg
+654987321
+sjkdfhfgvasdzhjk@inspedralbes.cat
+Tortilla de patatas
+Paella
+3.2€
+
+

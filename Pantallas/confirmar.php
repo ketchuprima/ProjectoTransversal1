@@ -13,7 +13,8 @@
     }
 
     $sustituto = str_replace(',', "\n", $_POST['pedido']);
-
+    $fecha = date("d-m-Y");
+    setCookie("check", $fecha);
     $fp = fopen('comanda.txt', 'a');
     fwrite($fp, "               PEDIDO              \n");
     fwrite($fp, "------------------------------------\n");
