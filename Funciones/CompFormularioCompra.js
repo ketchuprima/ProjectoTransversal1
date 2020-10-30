@@ -137,7 +137,6 @@ function validarEmail(){
 //Esta función valida que todos los campos ni estén vacios ni sean incorrectos sus datos una vez damos el botón de enviar para que el formulario sea correcto y pasamos los datos
 //de la lista de los pedidos del usuario para después poder escribirlos en el fichero
 function validar(){
-    alert(bocadillos);
     camposVacios();
     numeroCorrecto();
     validarEmail();
