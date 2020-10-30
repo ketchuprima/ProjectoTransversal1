@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Landing Page</title>
+    <link rel="stylesheet" href="../Estilos/Principal.css">
 </head>
-<body background="../Sources/Instituto.jpg">
-
-    <img src="../Sources/inici.png"/>
-
+<body>
+<div id="layer">
+    <img id="fotoInsti" src="../Sources/LogoInstitut.png">
+    <div id="lineaCentral">
+        <input id="comanda" type="image" onclick="location.href='comprobacio.php'" src="../Sources/LogoPedido.png">
+        <input id="lista" type="image" src="../Sources/LogoLista.png">
+    </div>
     <br/>
-
-    <a href="comprobacio.php"  name="menu" >"Ir al menu"</a>
-
-    <?php include 'footer.php';?>
+</div>
+   
 
 </body>
 </html>
