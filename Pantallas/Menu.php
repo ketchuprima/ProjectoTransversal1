@@ -12,14 +12,14 @@
     <div class="container">
         <div class="row">
             <main id="items"></main>
-            <aside>
+            <div>
                 <h2>Carrito</h2>
                 <ul id="carrito" class="list-group"></ul>
                 <hr>
                 <p >Total: <span id="total"></span>&euro;</p>
                 <button id="boton-vaciar" >Vaciar</button>
                 <input type="button" id="boton-pedir"  value="Siguiente">
-            </aside>
+            </div>
         </div>
     </div>
 </body>
