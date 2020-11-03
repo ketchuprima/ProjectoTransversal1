@@ -3,6 +3,7 @@ body{
     background-repeat: no-repeat;
     background-image: url("../Sources/fondoLandingPage.jpg");
     background-attachment: fixed;
+    width: 100%;
 }
 
 #layer {
