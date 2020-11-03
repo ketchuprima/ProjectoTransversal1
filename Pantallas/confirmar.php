@@ -65,15 +65,20 @@
     fwrite($fp, "\n\n\n");
     fclose($fp);  
     ?>
+
     <link rel="stylesheet" type="text/css" href="../libs/sweetalert/dist/sweetalert2.min.css">
     <script type="text/javascript" src="../libs/sweetalert/dist/sweetalert2.min.js" ></script>
     <script type="text/javascript">
-        swal({
-            'Finalizado',
-            'Se ha realizado el pedido correctamente',
-            'success',
-            button: "volver a inicio",
-        });
+        Swal.fire({
+            title: 'Finalizado',
+            text: 'Se ha realizado el pedido correctamente',
+            icon: 'success',
+            confirmButtonText: "volver a inicio",
+        }).then((result)=>{
+            if(result.isConfirmed){
+                window.location.href="principal.php";
+            }
+        })
     </script>
 </body>
 </html>
