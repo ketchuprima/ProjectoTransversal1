@@ -7,7 +7,7 @@
 <body>
     <?php
 
-    date_default_timezone_set('Etc/UTC');
+    /*date_default_timezone_set('Etc/UTC');
 
     require "../libs/PHPMailer-5.2-stable/PHPMailerAutoload.php";
     $mail = new PHPMailer;
@@ -40,7 +40,7 @@
         echo'<script type="text/javascript">
             alert("NO ENVIADO, intentar de nuevo");
             </script>';
-    }
+    }*/
 
     $fecha = date("d-m-Y");
 
@@ -63,7 +63,17 @@
     fwrite($fp, "\n");
     fwrite($fp, $sustituto . "€");
     fwrite($fp, "\n\n\n");
-    fclose($fp);
+    fclose($fp);  
     ?>
+    <link rel="stylesheet" type="text/css" href="../libs/sweetalert/dist/sweetalert2.min.css">
+    <script type="text/javascript" src="../libs/sweetalert/dist/sweetalert2.min.js" ></script>
+    <script type="text/javascript">
+        swal({
+            'Finalizado',
+            'Se ha realizado el pedido correctamente',
+            'success',
+            button: "volver a inicio",
+        });
+    </script>
 </body>
 </html>
