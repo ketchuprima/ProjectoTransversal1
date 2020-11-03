@@ -10,7 +10,7 @@
     <img id="fotoInsti" src="../Sources/LogoInstitut.png">
     <div id="lineaCentral">
         <input id="comanda" type="image" onclick="location.href='comprobacio.php'" src="../Sources/LogoPedido.png">
-        <input id="lista" type="image" src="../Sources/LogoLista.png">
+        <input id="lista" type="image" onclick="location.href='../Administracion/Administracion.php'" src="../Sources/LogoLista.png">
     </div>
     <br/>
 </div>

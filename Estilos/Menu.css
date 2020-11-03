@@ -1,0 +1,15 @@
+
+#container{
+    display: flex;
+}
+/* Create three equal columns that floats next to each other */
+#carrito {
+    background-color: #009fd6 ;
+    width: 20%;
+  }
+  #items {
+    flex: 1;    
+    overflow: auto;
+    background-color: #ADE8FB;
+  }
+  
