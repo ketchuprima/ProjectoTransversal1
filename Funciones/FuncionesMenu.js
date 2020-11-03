@@ -28,7 +28,7 @@ window.onload = function () {
         {
             id: 5,
             nombre: 'Tortilla de patatas',
-            precio: 1.50,
+            precio: 4,
             imagen: 'https://www.velocidadcuchara.com/wp-content/uploads/2014/02/tortilla-espanola-con-patatas-de-bolsa.jpg'
         },
         {
@@ -67,31 +67,30 @@ window.onload = function () {
         let limite=4
         if((hoy.getHours()>=11&&hoy.getMinutes()>30)||hoy.getHours()>11){ momentoMenu=4; limite=8 }
             for (i=momentoMenu; i<limite;i++) {
-            //el meollo
-            let miNodoCardBody = document.createElement('div');
-            //Titulo
-            let miNodoTitle = document.createElement('h5');
-            miNodoTitle.textContent = baseDeDatos[i]['nombre'];
-            //foto
-            let miNodoImagen = document.createElement('img');
-            miNodoImagen.setAttribute('src', baseDeDatos[i]['imagen']);
-            miNodoImagen.setAttribute('with', "100");
-            miNodoImagen.setAttribute('height', "100");
-            //Precio
-            let miNodoPrecio = document.createElement('p');
-            miNodoPrecio.textContent = baseDeDatos[i]['precio'] + '€';
-            //Boton
-            let miNodoBoton = document.createElement('button');
-            miNodoBoton.textContent = '+';
-            miNodoBoton.setAttribute('marcador', baseDeDatos[i]['id']);
-            miNodoBoton.addEventListener('click', anyadirCarrito);
-            // Insertamos
-            miNodoCardBody.appendChild(miNodoImagen);
-            miNodoCardBody.appendChild(miNodoTitle);
-            miNodoCardBody.appendChild(miNodoPrecio);
-            miNodoCardBody.appendChild(miNodoBoton);
-            items.appendChild(miNodoCardBody);
-}
+                //el meollo
+                let miNodoCardBody = document.createElement('div');
+                miNodoCardBody.setAttribute("class", "col");
+                //Titulo
+                let miNodoTitle = document.createElement('h5');
+                miNodoTitle.textContent = baseDeDatos[i]['nombre'];
+                //foto
+                let miNodoImagen = document.createElement('input');
+                miNodoImagen.setAttribute('src', baseDeDatos[i]['imagen']);
+                miNodoImagen.setAttribute('type', 'image');
+                miNodoImagen.setAttribute('width', "100%");
+                miNodoImagen.setAttribute('height', "100%");
+                miNodoImagen.setAttribute('marcador', baseDeDatos[i]['id']);
+                miNodoImagen.addEventListener('click', anyadirCarrito);
+                //Precio
+                let miNodoPrecio = document.createElement('p');
+                miNodoPrecio.textContent = baseDeDatos[i]['precio'] + '€';
+                // Insertamos
+                miNodoCardBody.appendChild(miNodoImagen);
+                miNodoCardBody.appendChild(miNodoTitle);
+                miNodoCardBody.appendChild(miNodoPrecio);
+               // miNodoCardBody.appendChild(miNodoBoton);
+                items.appendChild(miNodoCardBody);
+            }
     }
 
     function anyadirCarrito () {
@@ -111,6 +110,7 @@ window.onload = function () {
         alimentoTexto.setAttribute("id", baseDeDatos[parseInt(carrito[carrito.length-1])-1]['precio'])
 
         let botonBorrar = document.createElement('button');
+        botonBorrar.setAttribute("class", "btn btn-primary btn-sm");
         botonBorrar.textContent="-";
         botonBorrar.setAttribute("marcador", baseDeDatos[parseInt(carrito[carrito.length-1])-1]['id']);
         botonBorrar.addEventListener('click', borrarItemCarrito);

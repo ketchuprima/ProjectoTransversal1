@@ -2,23 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <?php include "../Funciones/bootstrap.php"?>
     <link rel="stylesheet" href="../Estilos/Menu.css">
     <script src="..\Funciones\FuncionesMenu.js"></script>
 </head>
 <body>
-    <div class="container">
-            <div id="items"></div>
-            <div id="carrito">
-                <h2>Carrito</h2>
-                <ul id="carrito" class="list-group"></ul>
-                <hr>
-                <p >Total: <span id="total"></span>&euro;</p>
-                <button id="boton-vaciar" >Vaciar</button>
-                <input type="button" id="boton-pedir"  value="Siguiente">
-            </div>
+    <div class="row">
+        <div id="columna1" class="col-sm-10" >
+            <div id="items"class="row row-cols-1 row-cols-sm-2 row-cols-md-4"></div>
+        </div>
+        <div id="pedido" class="col-sm-2">
+            <h2>Carrito</h2>
+            <hr>
+            <ul id="carrito" class="list-group"></ul>
+            <hr>
+            <h4 >Total: <span id="total"></span>&euro;</h4>
+            <button class="btn btn-secondary btn-lg" id="boton-vaciar" >Vaciar</button>
+            <input type="button" id="boton-pedir" class="btn btn-primary btn-lg"  value="Siguiente">
+        </div>
     </div>
 </body>
 </html>

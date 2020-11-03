@@ -1,15 +1,25 @@
 
-#container{
-    display: flex;
-}
-/* Create three equal columns that floats next to each other */
-#carrito {
-    background-color: #009fd6 ;
-    width: 20%;
+#pedido {
+    background-color: #727170 ;
+    min-height: 1000px;
+
   }
-  #items {
-    flex: 1;    
-    overflow: auto;
-    background-color: #ADE8FB;
+  #columna1 {
+    min-height: 1000px;
+    background-color: #BCBBBA;
   }
   
+ul{
+  list-style-type: none;
+
+}
+
+li{
+  padding-top: 5px;
+}
+.col{
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
