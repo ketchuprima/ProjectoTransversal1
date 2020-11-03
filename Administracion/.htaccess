@@ -1,0 +1,8 @@
+<Directory "Administracion">
+	AuthType Basic
+	AuthName "Restricted Files"
+	AuthBasicProvider file
+	AllowOverride AuthConfig
+	AuthUserFile "../../.htpasswd"
+	Require valid-user
+</Directory>
