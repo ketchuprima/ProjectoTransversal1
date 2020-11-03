@@ -6,7 +6,23 @@
 </head>
 <body>
     <?php
-        show_source("../Pantallas/comanda.txt");
+        listarFicheros("../Pedidos");
+        function listarFicheros($ruta){
+            if (is_dir($ruta)){
+                $gestor = opendir($ruta);
+                echo "<ul>";
+                while (($archivo = readdir($gestor)) !== false)  {
+                    $ruta_completa = $ruta . "/" . $archivo;
+                    if ($archivo != "." && $archivo != ".." && !strpos($archivo, "php")){
+                        echo "<li><input type=button value=$archivo onclick=location.href='../Pedidos/$archivo'></li>";
+                    }
+                }
+                closedir($gestor);
+                echo "</ul>";
+            } else {
+                echo "No es una ruta de directorio valida<br/>";
+            }
+        }
     ?>
 </body>
 </html>
