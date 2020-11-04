@@ -1,6 +1,5 @@
 AuthType Basic
 AuthName "Restricted Files"
 AuthBasicProvider file
-AllowOverride AuthConfig
-AuthUserFile ".htpasswd"
+AuthUserFile "/home/a16miqboipos/public_html/Cantina/ProjectoTransversal1/Administracion/.htpasswd"
 Require valid-user
