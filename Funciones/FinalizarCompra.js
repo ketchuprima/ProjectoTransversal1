@@ -65,14 +65,15 @@ function recibirPedido(){
     for(let i=0; i<pedido.length; i++){
         if(pedido[i] != ","){
             let nombres = document.createElement("li");
-            nombres.setAttribute("class", "lista-nombres");
+            nombres.setAttribute("class", "list-group-item");
             nombres.textContent = baseDeDatos[pedido[i]-1]["nombre"];
             document.getElementById("listaFinal").appendChild(nombres);
             bocadillos.push(baseDeDatos[pedido[i]-1]["nombre"]);
         }
     }
     let precioTotal = document.createElement("li");
-    precioTotal.setAttribute("class", "precioTotal");
+    precioTotal.setAttribute("class", "list-group-item");
+    precioTotal.setAttribute("id", "precio");
     precioTotal.textContent = precio;
     document.getElementById("listaFinal").appendChild(precioTotal);
     bocadillos.push(precio);

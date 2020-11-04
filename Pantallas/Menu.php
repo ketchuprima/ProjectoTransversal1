@@ -5,12 +5,16 @@
     <title>Menú</title>
     <?php include "../Funciones/bootstrap.php"?>
     <link rel="stylesheet" href="../Estilos/Menu.css">
+    <link rel="stylesheet" href="../Estilos/pagina.css">
     <script src="..\Funciones\FuncionesMenu.js"></script>
 </head>
 <body>
+    <div class="header">
+        <?php include("header.php") ?>
+    </div>
     <div class="row">
         <div id="columna1" class="col-sm-10" >
-            <div id="items"class="row row-cols-1 row-cols-sm-2 row-cols-md-4"></div>
+            <div id="items"class="row row-cols-2"></div>
         </div>
         <div id="pedido" class="col-sm-2">
             <h2>Carrito</h2>
@@ -22,5 +26,6 @@
             <input type="button" id="boton-pedir" class="btn btn-primary btn-lg"  value="Siguiente">
         </div>
     </div>
+
 </body>
 </html>

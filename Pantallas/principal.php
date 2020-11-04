@@ -5,6 +5,7 @@
     <title>Landing Page</title>
     <link rel="stylesheet" href="../Estilos/Principal.css">
     <link rel="stylesheet" href="../Estilos/pagina.css">
+
 </head>
 <body>
     <div class="header">

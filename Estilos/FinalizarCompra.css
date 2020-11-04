@@ -1,0 +1,38 @@
+
+body{
+    margin-top: auto;
+    justify-content: center;
+    align-content: center;
+    background-color:  #E2E2E2;
+}
+.container{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+#formulario{
+    border-left: 1mm solid #515151;
+
+}
+.list-group-item{
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: #898989;
+}
+#precio{
+    text-align: right;
+    font-weight: bold;
+    background-color: #898989;
+    border-top: 1mm solid #515151;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+.row{
+    background-color:  #898989;
+    padding: 5%;
+    margin-top: 20%;
+}
+
+

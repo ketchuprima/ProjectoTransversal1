@@ -3,51 +3,51 @@ window.onload = function () {
     let baseDeDatos = [
         {
             id: 1,
-            nombre: 'Bocadillo de nocilla',
+            nombre: 'Bocadillo de nocilla ',
             precio: 1.50,
-            imagen: 'https://media.istockphoto.com/photos/toast-with-chocolate-paste-on-a-white-background-picture-id646993386'
+            imagen: 'https://i.blogs.es/14f8ba/sandwich-smore/840_560.jpg'
         },
         {
             id: 2,
-            nombre: 'Bocadillo de fues',
+            nombre: 'Bocadillo de fuet ',
             precio: 1.70,
-            imagen: 'https://www.bcrek-shop.com/entrepans/337/fuet-de-olot.jpg'
+            imagen: 'https://media-cdn.tripadvisor.com/media/photo-s/0f/c3/1d/88/bocadillo-de-fuet-ecologico.jpg'
         },
         {
             id: 3,
-            nombre: 'Bocadillo de hamburguesa con queso',
-            precio: 2.40,
-            imagen: 'https://thumbs.dreamstime.com/z/bocadillo-de-la-hamburguesa-y-del-queso-de-la-carne-de-vaca-54317684.jpg'
+            nombre: 'Bocadillo vegetal ',
+            precio: 2.20,
+            imagen: 'https://recetasveganas.net/wp-content/uploads/2019/02/bocadillo-vegano-vegetariano-sin-carne-vegetal-receta.jpg'
         },
         {
             id: 4,
-            nombre: 'Bocadillo de atún',
+            nombre: 'Bocadillo de bacon y queso ',
             precio: 10.20,
-            imagen: 'https://sevilla.abc.es/gurme/wp-content/uploads/sites/24/2013/01/bocadillo-atun-morron.jpg'
+            imagen: 'https://d36fw6y2wq3bat.cloudfront.net/assets/images/cache/recipes/bocadillo-de-bacon-y-queso-con-huevo-frito/900/bocadillo-de-bacon-y-queso-con-huevo-frito.jpg'
         },
         {
             id: 5,
-            nombre: 'Tortilla de patatas',
+            nombre: 'Tortilla de patatas ',
             precio: 4,
             imagen: 'https://www.velocidadcuchara.com/wp-content/uploads/2014/02/tortilla-espanola-con-patatas-de-bolsa.jpg'
         },
         {
             id: 6,
-            nombre: 'Paella',
-            precio: 1.70,
+            nombre: 'Paella ',
+            precio: 7.50,
             imagen: 'https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/elgranchef/R/Receta-de-paella-1.jpg'
         },
         {
             id: 7,
-            nombre: 'Lentejas',
-            precio: 2.40,
-            imagen: 'https://www.recetasderechupete.com/wp-content/uploads/2019/09/Lentejas-con-chorizo-foto.jpg'
+            nombre: 'Salmón a la plancha ',
+            precio: 4.50,
+            imagen: 'https://www.comedera.com/wp-content/uploads/2016/10/receta-salmon-a-la-plancha.jpg'
         },
         {
             id: 8,
-            nombre: 'Macarrones',
-            precio: 10.20,
-            imagen: 'https://cdn6.recetasdeescandalo.com/wp-content/uploads/2020/05/Macarrones-con-tomate-casero.-Receta-muy-sabrosa-y-sencilla-1.jpg'
+            nombre: 'Macarrones ',
+            precio: 3.50,
+            imagen: 'https://www.5cook.es/wp-content/uploads/2016/04/Macarrones-a-la-bolo%C3%B1esa.jpg'
         }
 
     ]
@@ -75,10 +75,11 @@ window.onload = function () {
                 miNodoTitle.textContent = baseDeDatos[i]['nombre'];
                 //foto
                 let miNodoImagen = document.createElement('input');
+                miNodoImagen.setAttribute('class', 'shadow-lg p-3 mb-5 bg-white rounded');
                 miNodoImagen.setAttribute('src', baseDeDatos[i]['imagen']);
                 miNodoImagen.setAttribute('type', 'image');
-                miNodoImagen.setAttribute('width', "100%");
-                miNodoImagen.setAttribute('height', "100%");
+                miNodoImagen.setAttribute('width', "60%");
+                miNodoImagen.setAttribute('height', "60%");
                 miNodoImagen.setAttribute('marcador', baseDeDatos[i]['id']);
                 miNodoImagen.addEventListener('click', anyadirCarrito);
                 //Precio
@@ -94,7 +95,13 @@ window.onload = function () {
     }
 
     function anyadirCarrito () {
+        for(let i= 0; i<carrito.length; i++){
+            if(carrito[i]==this.getAttribute('marcador')){
+
+            }
+        }
         carrito.push(this.getAttribute('marcador'));
+
         renderizarCarrito();
     }
 
@@ -138,7 +145,7 @@ window.onload = function () {
     function calcularTotal(precio) {
 
         total+=precio;
-        totalItem.textContent = total;
+        totalItem.textContent = total.toFixed(2);
         
     }
 

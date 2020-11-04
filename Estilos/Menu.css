@@ -1,12 +1,12 @@
 
 #pedido {
-    background-color: #727170 ;
-    min-height: 1000px;
+    background-color: #898989 ;
+    min-height: 100%;
 
   }
   #columna1 {
-    min-height: 1000px;
-    background-color: #BCBBBA;
+    min-height: 100%;
+    background-color: #E2E2E2;
   }
   
 ul{
@@ -17,9 +17,14 @@ ul{
 li{
   padding-top: 5px;
 }
+
+#items{
+margin-top: 3%;
+}
 .col{
-  margin-right: 0px;
-  margin-left: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
+
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+
 }
