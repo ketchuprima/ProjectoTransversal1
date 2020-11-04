@@ -1,8 +1,6 @@
-<Directory "Administracion.php">
-	AuthType Basic
-	AuthName "Restricted Files"
-	AuthBasicProvider file
-	AllowOverride AuthConfig
-	AuthUserFile ".htpasswd"
-	Require valid-user
-</Directory>
+AuthType Basic
+AuthName "Restricted Files"
+AuthBasicProvider file
+AllowOverride AuthConfig
+AuthUserFile ".htpasswd"
+Require valid-user
