@@ -14,19 +14,19 @@ let baseDeDatos = [
     },
     {
         id: 2,
-        nombre: 'Bocadillo de fues',
+        nombre: 'Bocadillo de fuet',
         precio: 1.70,
         imagen: 'https://www.bcrek-shop.com/entrepans/337/fuet-de-olot.jpg'
     },
     {
         id: 3,
-        nombre: 'Bocadillo de hamburguesa con queso',
+        nombre: 'Bocadillo vegetal',
         precio: 2.40,
         imagen: 'https://thumbs.dreamstime.com/z/bocadillo-de-la-hamburguesa-y-del-queso-de-la-carne-de-vaca-54317684.jpg'
     },
     {
         id: 4,
-        nombre: 'Bocadillo de atún',
+        nombre: 'Bocadillo de bacon y queso',
         precio: 10.20,
         imagen: 'https://sevilla.abc.es/gurme/wp-content/uploads/sites/24/2013/01/bocadillo-atun-morron.jpg'
     },
@@ -44,7 +44,7 @@ let baseDeDatos = [
     },
     {
         id: 7,
-        nombre: 'Lentejas',
+        nombre: 'Salmón a la plancha',
         precio: 2.40,
         imagen: 'https://www.recetasderechupete.com/wp-content/uploads/2019/09/Lentejas-con-chorizo-foto.jpg'
     },
@@ -62,7 +62,43 @@ recibirPedido();
 
 //Esta función nos carga la lista de los pedidos que ha hecho el usuario en la pantalla anterior
 function recibirPedido(){
+    let bocadillosTotales = [];
+    let contador = 0;
+    let id = 0;
     for(let i=0; i<pedido.length; i++){
+        if(pedido[i] != ","){
+            bocadillosTotales.push(baseDeDatos[pedido[i]-1]["id"]);
+            bocadillos.push(baseDeDatos[pedido[i]-1]["nombre"]);
+        }
+    }
+    
+    for(let i=0; i<=baseDeDatos.length; i++){
+        contador=0;
+        for(let j=0; j<bocadillosTotales.length; j++){
+            if(bocadillosTotales[j] == i){
+                contador++;
+                bocadillosTotales.splice(j, 1);
+                j=-1;
+            }
+        }
+        if(contador>0){
+            let nombres = document.createElement("li");
+            nombres.setAttribute("class", "list-group-item");
+            nombres.textContent = baseDeDatos[i-1]["nombre"] + " x " + contador;
+            document.getElementById("listaFinal").appendChild(nombres);
+            bocadillos.push(baseDeDatos[i-1]["nombre"]);
+        }
+    }
+
+    let precioTotal = document.createElement("li");
+    precioTotal.setAttribute("class", "list-group-item");
+    precioTotal.setAttribute("id", "precio");
+    precioTotal.textContent = "Total: " + precio + "€";
+    document.getElementById("listaFinal").appendChild(precioTotal);
+    bocadillos.push(precio);
+    document.getElementById('pedido').value=bocadillos;
+
+    /*for(let i=0; i<pedido.length; i++){
         if(pedido[i] != ","){
             let nombres = document.createElement("li");
             nombres.setAttribute("class", "list-group-item");
@@ -77,7 +113,7 @@ function recibirPedido(){
     precioTotal.textContent = precio;
     document.getElementById("listaFinal").appendChild(precioTotal);
     bocadillos.push(precio);
-    document.getElementById('pedido').value=bocadillos;
+    document.getElementById('pedido').value=bocadillos;*/
 }
 
 //Esta función valida que los campos del formulario no estén vacios
