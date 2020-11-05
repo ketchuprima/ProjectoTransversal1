@@ -3,12 +3,12 @@
     width: 100%;
     left: 0;
     top: 0;
-    align-self: flex-start;    
+    position: fixed;   
     display: flex;
 }
 
 .footer{
-    align-self: flex-end;
+    position: fixed;
     width: 100%;
     bottom:0;
     left: 0;

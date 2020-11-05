@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Landing Page</title>
     <link rel="stylesheet" href="../Estilos/Principal.css">
-    <link rel="stylesheet" href="../Estilos/pagina.css">
+    <link rel="stylesheet" href="../Estilos/paginaPrincipal.css">
 
 </head>
 <body>

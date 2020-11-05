@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include "../Funciones/bootstrap.php"?>
     <link rel="stylesheet" href="../Estilos/FinalizarCompra.css">
+    <link rel="stylesheet" href="../Estilos/paginaPrincipal.css">
 </head>
 <body class="h-100 ">
+    <div class="header">
+        <?php include("./header.php") ?>
+    </div>
     <div class="container">
                 <div class="row">
                     <div id="pedidoFinal" class="col-sm-8 align-self-center">
@@ -39,6 +43,9 @@
                     </div>
                 </div>
             </div>
+    <div class="footer">
+        <?php include("./footer.php") ?>
+    </div>
     <script src="../Funciones/FinalizarCompra.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="header">
-        <?php include("header.php") ?>
+        <?php include("./header.php") ?>
     </div>
     <div class="row">
         <div id="columna1" class="col-sm-10" >
@@ -24,8 +24,10 @@
             <h4 >Total: <span id="total"></span>&euro;</h4>
             <button class="btn btn-secondary btn-lg" id="boton-vaciar" >Vaciar</button>
             <input type="button" id="boton-pedir" class="btn btn-primary btn-lg"  value="Siguiente">
-        </div>
+        </div>        
     </div>
-
+    <div class="footer">
+        <?php include("./footer.php") ?>
+    </div>
 </body>
 </html>

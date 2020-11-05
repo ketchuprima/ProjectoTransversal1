@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include "../Funciones/bootstrap.php"?>
     <link rel="stylesheet" type="text/css" href="../Estilos/Administracion.css">
+    <link rel="stylesheet" href="../Estilos/paginaPrincipal.css">
 </head>
 <body>
+    <div class="header">
+        <?php include("./header.php") ?>
+    </div>
     <?php
         listarFicheros("../Pedidos");
         function listarFicheros($ruta){
@@ -26,5 +30,8 @@
             }
         }
     ?>
+    <div class="footer">
+        <?php include("./footer.php") ?>
+    </div>
 </body>
 </html>
