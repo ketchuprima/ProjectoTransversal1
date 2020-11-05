@@ -5,56 +5,7 @@ let correoCorrecto = true;
 let pedido = localStorage.getItem("pedido");
 let precio = parseFloat(localStorage.getItem("precio"));
 let bocadillos =[];
-let baseDeDatos = [
-    {
-        id: 1,
-        nombre: 'Bocadillo de nocilla',
-        precio: 1.50,
-        imagen: 'https://media.istockphoto.com/photos/toast-with-chocolate-paste-on-a-white-background-picture-id646993386'
-    },
-    {
-        id: 2,
-        nombre: 'Bocadillo de fuet',
-        precio: 1.70,
-        imagen: 'https://www.bcrek-shop.com/entrepans/337/fuet-de-olot.jpg'
-    },
-    {
-        id: 3,
-        nombre: 'Bocadillo vegetal',
-        precio: 2.40,
-        imagen: 'https://thumbs.dreamstime.com/z/bocadillo-de-la-hamburguesa-y-del-queso-de-la-carne-de-vaca-54317684.jpg'
-    },
-    {
-        id: 4,
-        nombre: 'Bocadillo de bacon y queso',
-        precio: 10.20,
-        imagen: 'https://sevilla.abc.es/gurme/wp-content/uploads/sites/24/2013/01/bocadillo-atun-morron.jpg'
-    },
-    {
-        id: 5,
-        nombre: 'Tortilla de patatas',
-        precio: 1.50,
-        imagen: 'https://www.velocidadcuchara.com/wp-content/uploads/2014/02/tortilla-espanola-con-patatas-de-bolsa.jpg'
-    },
-    {
-        id: 6,
-        nombre: 'Paella',
-        precio: 1.70,
-        imagen: 'https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/elgranchef/R/Receta-de-paella-1.jpg'
-    },
-    {
-        id: 7,
-        nombre: 'Salmón a la plancha',
-        precio: 2.40,
-        imagen: 'https://www.recetasderechupete.com/wp-content/uploads/2019/09/Lentejas-con-chorizo-foto.jpg'
-    },
-    {
-        id: 8,
-        nombre: 'Macarrones',
-        precio: 10.20,
-        imagen: 'https://cdn6.recetasdeescandalo.com/wp-content/uploads/2020/05/Macarrones-con-tomate-casero.-Receta-muy-sabrosa-y-sencilla-1.jpg'
-    }
-]
+let baseDeDatos = ModuloMenu.getBaseDeDatos();
 
 
 //Ejecución de las funciones iniciales

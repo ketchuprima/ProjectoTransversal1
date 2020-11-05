@@ -5,7 +5,6 @@
     <title>Menú</title>
     <?php include "../Funciones/bootstrap.php"?>
     <link rel="stylesheet" href="../Estilos/Menu.css">
-    <link rel="stylesheet" href="../Estilos/pagina.css">
     <script src="../Funciones/FuncionesMenu.js"></script>
     <script src="../Funciones/BaseDeDatos.js"></script>
 </head>

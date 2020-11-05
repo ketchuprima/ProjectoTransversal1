@@ -6,6 +6,8 @@
     <?php include "../Funciones/bootstrap.php"?>
     <link rel="stylesheet" href="../Estilos/FinalizarCompra.css">
     <link rel="stylesheet" href="../Estilos/paginaPrincipal.css">
+    <script src="../Funciones/BaseDeDatos.js"></script>
+
 </head>
 <body class="h-100 ">
     <div class="header">
