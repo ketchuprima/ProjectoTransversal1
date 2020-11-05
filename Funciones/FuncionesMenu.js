@@ -95,56 +95,75 @@ window.onload = function () {
     }
 
     function anyadirCarrito () {
+        let contador=0;
         for(let i= 0; i<carrito.length; i++){
             if(carrito[i]==this.getAttribute('marcador')){
-
+                contador++;
             }
         }
         carrito.push(this.getAttribute('marcador'));
 
-        renderizarCarrito();
+        renderizarCarrito(contador+1);
     }
 
-    function renderizarCarrito() {
+    function renderizarCarrito(contador) {
+        if(contador==1){
+            let alimentoDiv = document.createElement('div');
+            alimentoDiv.setAttribute("name", carrito[carrito.length-1]);
+            alimentoDiv.setAttribute("class", "Alimento");
 
-        let alimentoDiv = document.createElement('div');
-        alimentoDiv.setAttribute("name", carrito[carrito.length-1]);
-        alimentoDiv.setAttribute("class", "Alimento");
+            let alimentoTexto = document.createElement('li');
+            alimentoTexto.textContent+= baseDeDatos[parseInt(carrito[carrito.length-1])-1]['nombre'];
+            alimentoTexto.setAttribute("id", baseDeDatos[parseInt(carrito[carrito.length-1])-1]['precio'])
+            
+            alimentoTexto.appendChild(ReenderizarBotonBorrar(baseDeDatos[parseInt(carrito[carrito.length-1])-1]['id']));
+            alimentoDiv.appendChild(alimentoTexto);
+            carritoItem.appendChild(alimentoDiv)
+        }
+        else{
+            let divAlimento = document.getElementsByName(carrito[carrito.length-1]);
+            divAlimento[0].firstChild.innerHTML= baseDeDatos[parseInt(carrito[carrito.length-1])-1]['nombre']+" x"+contador;
 
+            divAlimento[0].firstChild.appendChild(ReenderizarBotonBorrar(baseDeDatos[parseInt(carrito[carrito.length-1])-1]['id']));
+        }
+        calcularTotal(baseDeDatos[parseInt(carrito[carrito.length-1])-1]['precio']);
 
-        let alimentoTexto = document.createElement('li');
-        alimentoTexto.textContent+= baseDeDatos[parseInt(carrito[carrito.length-1])-1]['nombre'];
-        alimentoTexto.setAttribute("id", baseDeDatos[parseInt(carrito[carrito.length-1])-1]['precio'])
-
-        let botonBorrar = document.createElement('button');
-        botonBorrar.setAttribute("class", "btn btn-primary btn-sm");
-        botonBorrar.textContent="-";
-        botonBorrar.setAttribute("marcador", baseDeDatos[parseInt(carrito[carrito.length-1])-1]['id']);
-        botonBorrar.addEventListener('click', borrarItemCarrito);
-        
-        alimentoTexto.appendChild(botonBorrar);
-        alimentoDiv.appendChild(alimentoTexto);
-        carritoItem.appendChild(alimentoDiv)
-        
-        calcularTotal(baseDeDatos[parseInt(carrito[carrito.length-1])-1]['precio']); 
 
     }
 
     function borrarItemCarrito() {
         let check = false;
-        this.parentNode.parentNode.removeChild(this.parentNode);
+        let contador=0;
+        let marcador=this.getAttribute('marcador');
+        let parentnode = this.parentNode;
+
+        calcularTotal(-this.parentNode.id);
+
+        for(let i= 0; i<carrito.length; i++){
+            if(carrito[i]==marcador){
+                contador++;
+            }
+        }
+        if(contador==1) parentnode.parentNode.parentNode.removeChild(parentnode.parentNode);
+        
+        else{
+            parentnode.innerHTML=baseDeDatos[marcador-1]["nombre"]+" x"+(contador-1);
+            parentnode.appendChild(ReenderizarBotonBorrar(marcador));
+        }
+
         for(let i=0; i<carrito.length && check==false; i++){
             if(carrito[i]==this.getAttribute('marcador')) {
-                delete carrito[i];
+                carrito.splice(i, 1);
                 check=true;
             }
         }
-        calcularTotal(-this.parentNode.id);
+
     }
 
     function calcularTotal(precio) {
 
         total+=precio;
+        if(total.toFixed(2)==-0.00) total=0;
         totalItem.textContent = total.toFixed(2);
         
     }
@@ -170,6 +189,15 @@ window.onload = function () {
         localStorage.setItem('pedido', carrito);
         localStorage.setItem('precio', total);
         window.location.href="../Pantallas/FinalizarCompra.php";
+    }
+
+    function ReenderizarBotonBorrar(marcador){
+        let botonBorrar = document.createElement('button');
+        botonBorrar.setAttribute("class", "btn btn-primary btn-sm");
+        botonBorrar.textContent="-";
+        botonBorrar.setAttribute("marcador", marcador);
+        botonBorrar.addEventListener('click', borrarItemCarrito);
+        return botonBorrar
     }
 
     botonVaciarItem.addEventListener('click', vaciarCarrito);
