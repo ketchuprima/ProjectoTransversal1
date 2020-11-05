@@ -14,6 +14,7 @@
                     </div>
                     <div id="formulario" class="col-sm-4 align-self-center">
                         <form action="confirmar.php" method="post" name="factura" id="factura">
+                        <h4>Factura</h4>
                         <div>
                             <label for="nombre" class="label">Nombre</label>
                             <input name="nombre" type="text" class="form-control" id="nombre">

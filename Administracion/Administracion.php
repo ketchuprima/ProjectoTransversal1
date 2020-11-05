@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include "../Funciones/bootstrap.php"?>
+    <link rel="stylesheet" type="text/css" href="../Estilos/Administracion.css">
 </head>
 <body>
     <?php
@@ -14,7 +16,7 @@
                 while (($archivo = readdir($gestor)) !== false)  {
                     $ruta_completa = $ruta . "/" . $archivo;
                     if ($archivo != "." && $archivo != ".." && !strpos($archivo, "php")){
-                        echo "<li><input type=button value=$archivo onclick=location.href='../Pedidos/$archivo'></li>";
+                        echo "<li><input class='btn btn-primary' type=button value=$archivo onclick=location.href='../Pedidos/$archivo'></li>";
                     }
                 }
                 closedir($gestor);
