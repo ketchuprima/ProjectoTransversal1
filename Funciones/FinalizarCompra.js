@@ -3,7 +3,7 @@ let vacio = true;
 let numCorrecto = true;
 let correoCorrecto = true;
 let pedido = localStorage.getItem("pedido");
-let precio = localStorage.getItem("precio");
+let precio = parseFloat(localStorage.getItem("precio"));
 let bocadillos =[];
 let baseDeDatos = [
     {
@@ -68,7 +68,6 @@ function recibirPedido(){
     for(let i=0; i<pedido.length; i++){
         if(pedido[i] != ","){
             bocadillosTotales.push(baseDeDatos[pedido[i]-1]["id"]);
-            bocadillos.push(baseDeDatos[pedido[i]-1]["nombre"]);
         }
     }
     
@@ -86,14 +85,14 @@ function recibirPedido(){
             nombres.setAttribute("class", "list-group-item");
             nombres.textContent = baseDeDatos[i-1]["nombre"] + " x " + contador;
             document.getElementById("listaFinal").appendChild(nombres);
-            bocadillos.push(baseDeDatos[i-1]["nombre"]);
+            bocadillos.push(nombres.textContent);
         }
     }
 
     let precioTotal = document.createElement("li");
     precioTotal.setAttribute("class", "list-group-item");
     precioTotal.setAttribute("id", "precio");
-    precioTotal.textContent = "Total: " + precio + "€";
+    precioTotal.textContent = "Total: " + precio.toFixed(2) + "€";
     document.getElementById("listaFinal").appendChild(precioTotal);
     bocadillos.push(precio);
     document.getElementById('pedido').value=bocadillos;
