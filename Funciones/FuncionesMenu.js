@@ -1,56 +1,6 @@
 window.onload = function () {
     // Variables
-    let baseDeDatos = [
-        {
-            id: 1,
-            nombre: 'Bocadillo de nocilla ',
-            precio: 1.50,
-            imagen: 'https://i.blogs.es/14f8ba/sandwich-smore/840_560.jpg'
-        },
-        {
-            id: 2,
-            nombre: 'Bocadillo de fuet ',
-            precio: 1.70,
-            imagen: 'https://media-cdn.tripadvisor.com/media/photo-s/0f/c3/1d/88/bocadillo-de-fuet-ecologico.jpg'
-        },
-        {
-            id: 3,
-            nombre: 'Bocadillo vegetal ',
-            precio: 2.20,
-            imagen: 'https://recetasveganas.net/wp-content/uploads/2019/02/bocadillo-vegano-vegetariano-sin-carne-vegetal-receta.jpg'
-        },
-        {
-            id: 4,
-            nombre: 'Bocadillo de bacon y queso ',
-            precio: 10.20,
-            imagen: 'https://d36fw6y2wq3bat.cloudfront.net/assets/images/cache/recipes/bocadillo-de-bacon-y-queso-con-huevo-frito/900/bocadillo-de-bacon-y-queso-con-huevo-frito.jpg'
-        },
-        {
-            id: 5,
-            nombre: 'Tortilla de patatas ',
-            precio: 4,
-            imagen: 'https://www.velocidadcuchara.com/wp-content/uploads/2014/02/tortilla-espanola-con-patatas-de-bolsa.jpg'
-        },
-        {
-            id: 6,
-            nombre: 'Paella ',
-            precio: 7.50,
-            imagen: 'https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/elgranchef/R/Receta-de-paella-1.jpg'
-        },
-        {
-            id: 7,
-            nombre: 'Salmón a la plancha ',
-            precio: 4.50,
-            imagen: 'https://www.comedera.com/wp-content/uploads/2016/10/receta-salmon-a-la-plancha.jpg'
-        },
-        {
-            id: 8,
-            nombre: 'Macarrones ',
-            precio: 3.50,
-            imagen: 'https://www.5cook.es/wp-content/uploads/2016/04/Macarrones-a-la-bolo%C3%B1esa.jpg'
-        }
-
-    ]
+    let baseDeDatos = ModuloMenu.getBaseDeDatos();
     let items = document.getElementById("items");
     let carrito = [];
     let total = 0;
@@ -63,10 +13,23 @@ window.onload = function () {
     // Funciones
     function renderItems() {
         var hoy = new Date();
-        let momentoMenu=0;
-        let limite=4
-        if((hoy.getHours()>=11&&hoy.getMinutes()>30)||hoy.getHours()>11){ momentoMenu=4; limite=8 }
-            for (i=momentoMenu; i<limite;i++) {
+        let momentoMenu=2;
+        let i=0;
+        let limite=0;
+        //si ya han pasado las 11:30
+        if((hoy.getHours()>=11&&hoy.getMinutes()>30)||hoy.getHours()>11){
+            momentoMenu=4; 
+            document.getElementById("nav-tab").removeChild( document.getElementById("nav-bocadillos-tab"));        
+
+        }else{//y si no
+            document.getElementById("nav-tab").removeChild( document.getElementById("nav-platos-tab"));        
+            document.getElementById("nav-tab").removeChild( document.getElementById("nav-postres-tab"));        
+
+        }
+        for(let j=1; j<momentoMenu+1; j++){
+            items = document.getElementById("items"+(j));
+            limite=i+3;
+            while (i<=limite) {
                 //el meollo
                 let miNodoCardBody = document.createElement('div');
                 miNodoCardBody.setAttribute("class", "col");
@@ -89,9 +52,11 @@ window.onload = function () {
                 miNodoCardBody.appendChild(miNodoImagen);
                 miNodoCardBody.appendChild(miNodoTitle);
                 miNodoCardBody.appendChild(miNodoPrecio);
-               // miNodoCardBody.appendChild(miNodoBoton);
+
                 items.appendChild(miNodoCardBody);
+                i++;
             }
+        }
     }
 
     function anyadirCarrito () {
