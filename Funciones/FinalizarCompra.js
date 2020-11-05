@@ -16,11 +16,17 @@ function recibirPedido(){
     let bocadillosTotales = [];
     let contador = 0;
     let id = 0;
-    for(let i=0; i<pedido.length; i++){
+    let comp = pedido[0];
+    for(let i=1; i<pedido.length; i++){
         if(pedido[i] != ","){
-            bocadillosTotales.push(baseDeDatos[pedido[i]-1]["id"]);
+            comp += pedido[i];
+        }else{
+            bocadillosTotales.push(baseDeDatos[comp-1]["id"]);
+            comp = "";
         }
     }
+
+    bocadillosTotales.push(baseDeDatos[comp-1]["id"]);
     
     for(let i=0; i<=baseDeDatos.length; i++){
         contador=0;
@@ -39,6 +45,8 @@ function recibirPedido(){
             bocadillos.push(nombres.textContent);
         }
     }
+
+    console.log(bocadillos);
 
     let precioTotal = document.createElement("li");
     precioTotal.setAttribute("class", "list-group-item");

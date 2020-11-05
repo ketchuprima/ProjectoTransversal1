@@ -151,9 +151,18 @@ window.onload = function () {
     }
 
     function Enviar(){
-        localStorage.setItem('pedido', carrito);
-        localStorage.setItem('precio', total);
-        window.location.href="../Pantallas/FinalizarCompra.php";
+        if(total == 0){
+            Swal.fire({
+                title: 'Error',
+                text: 'Has de seleccionar algún producto de la carta',
+                icon: 'error',
+                confirmButtonText: "Cerrar",
+            })
+        }else{
+            localStorage.setItem('pedido', carrito);
+            localStorage.setItem('precio', total);
+            window.location.href="../Pantallas/FinalizarCompra.php";
+        }
     }
 
     function ReenderizarBotonBorrar(marcador){

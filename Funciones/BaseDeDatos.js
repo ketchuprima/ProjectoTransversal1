@@ -28,7 +28,7 @@ var ModuloMenu = (function(){
             id: 5,
             nombre: 'Coca Cola Zero ',
             precio: 1.50,
-            imagen: 'https://thumbs.dreamstime.com/b/lata-de-coca-cola-con-fondo-negro-amsterdam-zero-puede-ml-sin-az%C3%BAcar-producida-por-la-compa%C3%B1%C3%ADa-aislada-en-es-popular-refresco-167901708.jpg'
+            imagen: 'https://images.unsplash.com/photo-1543253687-c931c8e01820?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'
         },
         {
             id: 6,
@@ -38,15 +38,15 @@ var ModuloMenu = (function(){
         },
         {
             id: 7,
-            nombre: 'Fanta fruit twist ',
+            nombre: 'Fanta de limón ',
             precio: 1.50,
-            imagen: 'https://thumbs.dreamstime.com/b/la-poder-de-fanta-aisl%C3%B3-en-un-fondo-negro-102790875.jpg'
+            imagen: 'https://www.bentosushi.es/wp-content/uploads/2019/03/Fanta-Limon-1.jpg'
         },
         {
             id: 8,
-            nombre: 'Café ',
+            nombre: 'Agua ',
             precio: 1.20,
-            imagen: 'https://image.freepik.com/vector-gratis/taza-amarilla-realista-lleno-cafe-express-clasico-negro-fondo-negro_98292-4275.jpg'
+            imagen: 'https://image.freepik.com/foto-gratis/agua-fria-botella-plastico-tapa-azul-sobre-fondo-negro_33789-80.jpg'
         },    
         {
             id: 9,
@@ -68,7 +68,7 @@ var ModuloMenu = (function(){
         },
         {
             id: 12,
-            nombre: 'Macarrones ',
+            nombre: 'Macarrones a la boloñesa ',
             precio: 3.50,
             imagen: 'https://www.5cook.es/wp-content/uploads/2016/04/Macarrones-a-la-bolo%C3%B1esa.jpg'
         },    
@@ -80,7 +80,7 @@ var ModuloMenu = (function(){
         },
         {
             id: 14,
-            nombre: 'Frutas ',
+            nombre: 'Macedonia ',
             precio: 1,
             imagen: 'https://sevilla.abc.es/gurme/wp-content/uploads/sites/24/2011/09/ensaldas-con-frutas.jpg'
         },

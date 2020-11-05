@@ -5,10 +5,13 @@
     <title>Menú</title>
     <?php include "../Funciones/bootstrap.php"?>
     <link rel="stylesheet" href="../Estilos/Menu.css">
+    <link rel="stylesheet" href="../Estilos/pagina.css">
     <script src="../Funciones/FuncionesMenu.js"></script>
     <script src="../Funciones/BaseDeDatos.js"></script>
+    <link rel="stylesheet" type="text/css" href="../libs/sweetalert/dist/sweetalert2.min.css">
+    <script type="text/javascript" src="../libs/sweetalert/dist/sweetalert2.min.js" ></script>
 </head>
-<body>
+<body id="bodyMenu">
     <div class="header">
         <?php include("./header.php") ?>
     </div>
