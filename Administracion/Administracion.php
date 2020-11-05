@@ -14,7 +14,7 @@
                 while (($archivo = readdir($gestor)) !== false)  {
                     $ruta_completa = $ruta . "/" . $archivo;
                     if ($archivo != "." && $archivo != ".." && !strpos($archivo, "php")){
-                        echo "<li><input type=button value=$archivo onclick=location.href='../Pedidos/$archivo'></li>";
+                        echo "<li><input class=btn btn-outline-info type=button value=$archivo onclick=location.href='../Pedidos/$archivo'></li>";
                     }
                 }
                 closedir($gestor);
