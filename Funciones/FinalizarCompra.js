@@ -107,15 +107,17 @@ function camposVacios(){
         if(inputs[i].getAttribute("id") != "enviar"){
             if(inputs[i].getAttribute("id") != "retroceder"){
                 if(inputs[i].getAttribute("id") != "pedido"){
-                    elemento = inputs[i].getAttribute("id");
-                    if(inputs[i].value.length == 0){
-                        document.getElementById("error" + elemento).innerHTML="El campo está vacío";
-                        document.getElementById(elemento).style.backgroundColor="red";
-                        document.getElementById("error" + elemento).style.display="block";
-                        vacio = false;
-                    }else{
-                        document.getElementById("error" + elemento).style.display="none";
-                        document.getElementById(elemento).style.backgroundColor="";
+                    if(inputs[i].getAttribute("id") != "imagen"){
+                        elemento = inputs[i].getAttribute("id");
+                        if(inputs[i].value.length == 0){
+                            document.getElementById("error" + elemento).innerHTML="El campo está vacío";
+                            document.getElementById(elemento).style.backgroundColor="red";
+                            document.getElementById("error" + elemento).style.display="block";
+                            vacio = false;
+                        }else{
+                            document.getElementById("error" + elemento).style.display="none";
+                            document.getElementById(elemento).style.backgroundColor="";
+                        }
                     }
                 }
             }
