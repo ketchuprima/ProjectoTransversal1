@@ -1,8 +1,10 @@
 <?php
-    $fecha_actual = date("d-m-Y");
+    $fecha_actual = strtotime(date("d-m-Y"));
+    $fecha_pedido = strtotime(date($_COOKIE['check']));
+    echo $fecha_pedido;
     if (isset($_COOKIE['check'])){
             echo "1";
-        if(date("d-m-Y",strtotime($fecha_actual."- 1 days"))>=$_COOKIE['check']){
+        if($fecha_actual>$fecha_pedido){
             echo "2";
             header("Location: Menu.php");
         }else{
