@@ -5,6 +5,6 @@ mediante un usuario de administrador.
 
 Estado del proyecto: Finalizado con posibles mejoras para el futuro.
 
-Dirección de la documentación:
+Dirección de la documentación: http://labs.iam.cat/~a16miqboipos/Cantina/ProjectoTransversal1/Documentaci%c3%b3n/
 
 Dirección del proyecto: http://labs.iam.cat/~a16miqboipos/Cantina/ProjectoTransversal1/
